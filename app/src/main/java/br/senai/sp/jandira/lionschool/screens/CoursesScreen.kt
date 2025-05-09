@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -29,6 +30,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -87,6 +89,7 @@ fun CoursesScreen (){
                 modifier = Modifier
                     .padding(top = 35.dp)
                     .width(370.dp),
+                shape = RoundedCornerShape(10.dp),
                 trailingIcon = {
                     Icon(
                         imageVector = Icons.Default.Search,
@@ -106,6 +109,46 @@ fun CoursesScreen (){
                     unfocusedContainerColor = Color (0xffF5F5F5)
                 )
 
+
+            )
+            Spacer(modifier = Modifier .height(10.dp))
+            Row (
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+
+            ){
+                Image(
+                    painter = painterResource(R.drawable.lista),
+                    contentDescription = "",
+                    modifier = Modifier
+                        .height(50.dp)
+                        .width(50.dp)
+                )
+                Text(
+                    text = "Courses",
+                    color = (Color(0xff3347B0)),
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 30.sp,
+                    modifier = Modifier
+                        .padding(top = 5.dp)
+
+                )
+            }
+            Spacer(modifier = Modifier .height(4.dp))
+            CardCourses(
+
+            )
+            Spacer(modifier = Modifier .height(4.dp))
+            CardCourses(
+
+            )
+            Spacer(modifier = Modifier .height(4.dp))
+            CardCourses(
+
+            )
+            Spacer(modifier = Modifier .height(4.dp))
+            CardCourses(
 
             )
         }
